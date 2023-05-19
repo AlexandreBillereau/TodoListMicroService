@@ -30,16 +30,14 @@ public class AuthController : ControllerBase
         var sha256 = UtilsSHA256.ComputeSha256Hash(credential.Pwd);
         var row= _db.User.FirstOrDefaultAsync(field => field.Name == credential.Name);
 
-        if (row.Result.Pwd != sha256)
-        {
-            return "error";
-        }
+        if (row.Result.Pwd != sha256) { return "error"; }
 
         BluePrintToken token_data = new BluePrintToken(new []
-        {
-            new Claim("name", credential.Name),
-            new Claim( "role", "user")
-        });
+            {
+                new Claim("name", credential.Name),
+                new Claim( "role", "user")
+            }
+        );
         
 
         return AuthJWTUtils.gentokenJwt(token_data);
