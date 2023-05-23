@@ -1,0 +1,46 @@
+﻿@page "/Connexion"
+@using ClientApp.Model
+@using System
+@using ClientApp.Const
+@inject IJSRuntime JS
+
+<div class="container">
+    <h3>connexion</h3>
+    <form class="form" method="post">
+        <EditForm Model="@_user" OnValidSubmit="connect">
+            <DataAnnotationsValidator></DataAnnotationsValidator>
+            <div class="form-group">
+                <label >user name</label>
+                <input class="form-control" type="text"@bind="_user.Name"/>
+                <ValidationMessage For="() => _user.Name"></ValidationMessage>
+            </div>
+            <div class="form-group">
+                <label>password</label>
+                <input class="form-control" type="text" @bind="_user.Pwd"/>
+                <ValidationMessage For="() => _user.Pwd"></ValidationMessage>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary mt-3" >connexion</button>
+            </div>
+        </EditForm>
+    </form>
+    <div class="d-flex mt-3">
+        <NavLink href="create" class="link-primary link">creat account</NavLink>
+    </div>
+</div>
+
+
+@code {
+    User _user = new();
+    HttpClient _client = new();
+
+    private async void connect()
+    {
+        var body = new { name = _user.Name, pwd = _user.Pwd};
+        var res = await _client.PostAsJsonAsync(ApiPath.Auth, body);
+        var token = await res.Content.ReadAsStringAsync();
+        Console.WriteLine(token);
+
+        await JS.InvokeVoidAsync("localStorage.setItem", "token", token);
+    }
+}

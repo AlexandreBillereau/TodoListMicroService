@@ -1,13 +1,18 @@
-using System.Text;
 using AuthAPP.Data;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
+// Add services to the container.
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAnyOrigin", builder => 
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader()
+        );
+});
 builder.Services.AddControllers();
 builder.Services.AddDbContext<AuthContext>(
     options => options.UseSqlServer(builder.Configuration.GetConnectionString("local/auth"))
@@ -18,7 +23,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
-
+app.UseCors("AllowAnyOrigin");
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

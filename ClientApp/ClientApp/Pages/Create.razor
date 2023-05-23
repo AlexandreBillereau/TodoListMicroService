@@ -1,0 +1,50 @@
+﻿@page "/create"
+@using ClientApp.Model
+@using ClientApp.Const
+
+
+<div class="container">
+    <h3>connexion</h3>
+    <form class="form" method="post">
+        <EditForm Model="@_user" OnValidSubmit="create">
+            <DataAnnotationsValidator></DataAnnotationsValidator>
+            <div class="form-group">
+                <label >user name</label>
+                <input class="form-control" type="text"@bind="_user.Name"/>
+                <ValidationMessage For="() => _user.Name"></ValidationMessage>
+            </div>
+            <div class="form-group">
+                <label>password</label>
+                <input class="form-control" type="text" @bind="_user.Pwd"/>
+                <ValidationMessage For="() => _user.Pwd"></ValidationMessage>
+            </div>
+            <div class="form-group">
+                <label>confirm password</label>
+                <input class="form-control" type="text" @bind="_user.confirmPwd"/>
+                <ValidationMessage For="() => _user.confirmPwd"></ValidationMessage>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary mt-3" >connexion</button>
+            </div>
+        </EditForm>
+    </form>
+    <div class="d-flex mt-3">
+        <NavLink href="connexion" class="link-primary link">back to connexion</NavLink>
+    </div>
+</div>
+
+@code {
+    
+    UserCreation _user = new();
+    HttpClient _client = new();
+
+    public async void create()
+    {
+        var body = new { name = _user.Name, pwd = _user.Pwd };
+        var res = await _client.PostAsJsonAsync(ApiPath.AuthCreate, body);
+        var token = await res.Content.ReadAsStringAsync();
+        Console.WriteLine(token);
+        
+    }
+
+}

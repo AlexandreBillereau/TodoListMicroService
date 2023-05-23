@@ -1,12 +1,12 @@
 is_global = true
 build_property.TargetFramework = net6.0
 build_property.TargetPlatformMinVersion = 
-build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = 
 build_property.ProjectTypeGuids = 
-build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = false
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
-build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = browser
 build_property.RootNamespace = ClientApp
 build_property.RootNamespace = ClientApp
 build_property.ProjectDir = C:\Users\14388\WorkSpace\C# formation\TodoList\ClientApp\ClientApp\
@@ -16,30 +16,42 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\14388\WorkSpace\C# formation\TodoList\ClientApp\ClientApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/14388/WorkSpace/C\# formation/TodoList/ClientApp/ClientApp/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[C:/Users/14388/WorkSpace/C\# formation/TodoList/ClientApp/ClientApp/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/14388/WorkSpace/C\# formation/TodoList/ClientApp/ClientApp/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[C:/Users/14388/WorkSpace/C\# formation/TodoList/ClientApp/ClientApp/Pages/Connexion.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29ubmV4aW9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/14388/WorkSpace/C\# formation/TodoList/ClientApp/ClientApp/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+[C:/Users/14388/WorkSpace/C\# formation/TodoList/ClientApp/ClientApp/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/14388/WorkSpace/C\# formation/TodoList/ClientApp/ClientApp/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[C:/Users/14388/WorkSpace/C\# formation/TodoList/ClientApp/ClientApp/Pages/Create.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/14388/WorkSpace/C\# formation/TodoList/ClientApp/ClientApp/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[C:/Users/14388/WorkSpace/C\# formation/TodoList/ClientApp/ClientApp/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/14388/WorkSpace/C\# formation/TodoList/ClientApp/ClientApp/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+[C:/Users/14388/WorkSpace/C\# formation/TodoList/ClientApp/ClientApp/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/14388/WorkSpace/C\# formation/TodoList/ClientApp/ClientApp/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-kk7uqfacrs
+[C:/Users/14388/WorkSpace/C\# formation/TodoList/ClientApp/ClientApp/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/14388/WorkSpace/C\# formation/TodoList/ClientApp/ClientApp/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/14388/WorkSpace/C\# formation/TodoList/ClientApp/ClientApp/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-9hqbptr0vy
+
+[C:/Users/14388/WorkSpace/C\# formation/TodoList/ClientApp/ClientApp/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-3dzslfjxd2

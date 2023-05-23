@@ -16,12 +16,11 @@ namespace AuthAPP.Controllers;
 public class AuthController : ControllerBase
 {
     private static AuthContext _db;
-    private static IConfiguration _conf;
+   
     
-    public AuthController(AuthContext db, IConfiguration conf)
+    public AuthController(AuthContext db)
     {
         _db = db;
-        _conf = conf;
     }
 
     [HttpPost(Name = "./")]
@@ -32,15 +31,14 @@ public class AuthController : ControllerBase
 
         if (row.Result.Pwd != sha256) { return "error"; }
 
-        BluePrintToken token_data = new BluePrintToken(new []
+        TokenData tokenDataData = new TokenData(new []
             {
                 new Claim("name", credential.Name),
                 new Claim( "role", "user")
             }
         );
-        
 
-        return AuthJWTUtils.gentokenJwt(token_data);
+        return AuthJWTUtils.gentokenJwt(tokenDataData);
     }
     
     [HttpPost("Create")]
